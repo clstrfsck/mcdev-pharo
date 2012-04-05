@@ -1,3 +1,4 @@
+"Adopted from github.com/renggli/builder"
 "Unload Build Tools"
 [ Gofer new
 	package: 'HudsonBuildTools';
