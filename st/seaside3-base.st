@@ -25,6 +25,8 @@ Gofer new
 	package: 'Seaside-Pharo-Flow';
 	package: 'Seaside-Tools-Web';
 	package: 'Seaside-Pharo-Tools-Web';
+        package: 'Seaside-Development';
+        package: 'Seaside-Pharo-Development';
 	load.
 !
 "RSS"

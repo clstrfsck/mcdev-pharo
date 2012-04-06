@@ -22,6 +22,8 @@ Gofer new
 	package: 'Seaside-Tests-Pharo-Continuation';
 	package: 'Seaside-Tests-Flow';
 	package: 'Seaside-Tests-Tools-Web';
+        package: 'Seaside-Tests-Development';
+        package: 'Seaside-Tests-Pharo-Development';
 	load.
 !
 "RSS"
