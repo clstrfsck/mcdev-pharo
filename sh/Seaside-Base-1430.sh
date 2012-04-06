@@ -8,7 +8,6 @@ PKGNAME="`basename $0 .sh`"
 TSTNAME="${PKGNAME}-Tests"
 IMGNAME=Pharo-1.4.image
 PKGPARENT=Pharo-Base-1.4
-TSTPARENT="${PKGPARENT}-Tests"
 
 # Output and test results we will generate
 OUTFILE="${PKGNAME}.zip"
@@ -25,8 +24,11 @@ zip -qrj "$OUTFILE" build/*
 echo "$OUTFILE created"
 
 # Build the test image
-unzip -qjo -d build "${TSTPARENT}.zip" *.xml
 echo "${TSTNAME} as loaded by ${TSTNAME}.st" >> build/VERSIONS
-"$SCRIPTDIR/runscripts.sh" "${TSTNAME}" "$IMGNAME" st/buildtools.st st/seaside3-base-tests.st st/seaside3-runtests.st
+"$SCRIPTDIR/runscripts.sh" "${TSTNAME}" "$IMGNAME" \
+    st/buildtools.st \
+    st/seaside3-base-tests.st \
+    st/pharo14-runtests.st \
+    st/seaside3-runtests.st
 zip -qrj "$TSTFILE" build/*
 echo "$TSTFILE created"
