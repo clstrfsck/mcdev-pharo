@@ -5,6 +5,7 @@ set -e
 # Some useful vars for later
 SCRIPTDIR="`dirname $0`"
 PKGNAME="`basename $0 .sh`"
+IMGNAME=Pharo-1.4.image
 
 # Output and test results we will generate
 OUTFILE="${PKGNAME}.zip"
@@ -74,7 +75,9 @@ zip -qrj "$OUTFILE" build/*
 echo "$OUTFILE created"
 
 # Run the tests and zip these up into an artifact as well.
-"$SCRIPTDIR/runscripts.sh" "$PKGNAME-Tests" Pharo-1.4.image st/buildtools.st st/pharo14-runtests.st
+"$SCRIPTDIR/runscripts.sh" "${PKGNAME}-Tests" "$IMGNAME" \
+    st/buildtools.st \
+    st/pharo14-runtests.st
 zip -qrj "$TSTFILE" build/*
 echo "$TSTFILE created"
 
