@@ -33,5 +33,4 @@ rm -rf tmp/package-cache
 rm -f tmp/PharoDebug.log
 echo "${PKGNAME} as loaded by ${PKGNAME}.st" >> tmp/VERSION
 zip -qrj "$OUTFILE" tmp/*
-rm -rf tmp
 echo "$OUTFILE created"
