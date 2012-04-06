@@ -14,8 +14,8 @@ TSTFILE="${PKGNAME}-Tests.zip"
 UPSTREAM=https://ci.lille.inria.fr/pharo/job
 
 # VM, image and sources we need to bootstrap
-VMPROJ="Cog-Unix"
-VM_ART=Cog.zip
+VMPROJ="Cog-VM/Architecture=32,OS=linux"
+VM_ART=Cog-linux.zip
 PHPROJ="Pharo%201.4"
 PH_ART=Pharo-1.4.zip
 SRCURL=https://gforge.inria.fr/frs/download.php/24391/PharoV10.sources.zip
@@ -74,7 +74,7 @@ zip -qrj "$OUTFILE" build/*
 echo "$OUTFILE created"
 
 # Run the tests and zip these up into an artifact as well.
-"$SCRIPTDIR/runscripts.sh" "$PKGNAME" Pharo-1.4.image st/buildtools.st st/pharo14-runtests.st
+"$SCRIPTDIR/runscripts.sh" "$PKGNAME-Tests" Pharo-1.4.image st/buildtools.st st/pharo14-runtests.st
 zip -qrj "$TSTFILE" build/*
 echo "$TSTFILE created"
 
