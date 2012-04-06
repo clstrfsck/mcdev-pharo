@@ -1,8 +1,4 @@
-cog-linux-*.zip
-Pharo-1.4-*-*.zip
-Pharo-Unstable-1.4.zip
-Pharo-Unstable-VM.zip
-PharoV10.sources.zip
-SeasideBase-Unstable-1430.zip
+*.zip
+build/
 package-cache/
 tmp/
