@@ -1,19 +1,24 @@
 #!/bin/bash
 set -e
 
-OUTFILE=SeasideBase-Unstable-1430.zip
+PKGPARENT=Pharo-Unstable-1.4
+PKGNAME=SeasideBase-Unstable-1430
+PKGSCRIPTS="st/seaside3-base.st st/seaside3-ajp.st st/seaside3-zinc.st st/rfb.st"
+
+OUTFILE="${PKGNAME}.zip"
+IMGNAME=Pharo-1.4.image
 
 mkdir -p package-cache
 
 rm -rf tmp && mkdir tmp
-unzip -qjo -d tmp Pharo-Unstable-1.4.zip
+unzip -qjo -d tmp "${PKGPARENT}.zip"
 
-for f in st/before.st st/seaside3-base.st st/seaside3-ajp.st st/seaside3-zinc.st st/rfb.st st/after.st; do
-    cat "$f" >>tmp/seasidebase.st
-    echo "!" >>tmp/seasidebase.st
+for f in st/before.st $PKGSCRIPTS st/after.st; do
+    cat "$f" >>"tmp/${PKGNAME}.st"
+    echo "!" >>"tmp/${PKGNAME}.st"
 done
 
-(cd tmp; ln -s ../package-cache .; ./CogVM -nodisplay -nosound Pharo-1.4.image seasidebase.st)
+(cd tmp; ln -s ../package-cache .; ./CogVM -nodisplay -nosound "${IMGNAME}" "${PKGNAME}.st")
 
 if [ -f tmp/crash.dmp ]; then
     echo "Build failed: VM crashed"
@@ -26,7 +31,7 @@ fi
 
 rm -rf tmp/package-cache
 rm -f tmp/PharoDebug.log
-echo "Seaside 3.0 as loaded in seasidebase.st" >> tmp/VERSION
+echo "${PKGNAME} as loaded by ${PKGNAME}.st" >> tmp/VERSION
 zip -qrj "$OUTFILE" tmp/*
 rm -rf tmp
 echo "$OUTFILE created"
