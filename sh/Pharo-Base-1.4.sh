@@ -47,8 +47,13 @@ function get_buildfile {
 
 # Retrieve VM into local zip file from Jenkins
 # Local file includes build number for tracking
-echo "Checking current $VMPROJ build number"
-VBLD=`get_buildnum "$VMPROJ"`
+if [ -z "$VMPEG" ]; then
+    echo "Checking current $VMPROJ build number"
+    VBLD=`get_buildnum "$VMPROJ"`
+else
+    echo "Using $VMPROJ peg build $VMPEG"
+    VBLD="$VMPEG"
+fi
 VMFILE=cog-linux-${VBLD}.zip
 get_buildfile "$VMFILE" "$VMPROJ" ${VBLD} "$VM_ART"
 
@@ -56,7 +61,13 @@ get_buildfile "$VMFILE" "$VMPROJ" ${VBLD} "$VM_ART"
 # Local file includes build number and update number for tracking
 # We can use the update number here as a regular convention is used
 echo "Checking current $PHPROJ build number"
-PBLD=`get_buildnum "$PHPROJ"`
+if [ -z "$PHPEG" ]; then
+    echo "Checking current $PHPROJ build number"
+    PBLD=`get_buildnum "$PHPROJ"`
+else
+    echo "Using $PHPROJ peg build $PHPEG"
+    PBLD="$PHPEG"
+fi
 PURL="$UPSTREAM/$PHPROJ/$PBLD/api/xml?xpath=/*/description"
 PREV=`curl -fsS "${PURL}" | cut -f2 -d " " | tr -dc 0123456789`
 echo "Build number $PBLD revision $PREV"
@@ -77,7 +88,7 @@ echo "$OUTFILE created"
 # Run the tests and zip these up into an artifact as well.
 "$SCRIPTDIR/runscripts.sh" "${PKGNAME}-Tests" "$IMGNAME" \
     st/buildtools.st \
-    st/pharo14-runtests.st
+    st/pharo-runtests.st
 zip -qrj "$TSTFILE" build/*
 echo "$TSTFILE created"
 

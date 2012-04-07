@@ -28,7 +28,7 @@ echo "${TSTNAME} as loaded by ${TSTNAME}.st" >> build/VERSIONS
 "$SCRIPTDIR/runscripts.sh" "${TSTNAME}" "$IMGNAME" \
     st/buildtools.st \
     st/seaside3-base-tests.st \
-    st/pharo14-runtests.st \
+    st/pharo-runtests.st \
     st/seaside3-runtests.st
 zip -qrj "$TSTFILE" build/*
 echo "$TSTFILE created"
