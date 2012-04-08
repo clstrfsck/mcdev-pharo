@@ -41,5 +41,11 @@ FileStream fileIn: '../cs/OmniBrowser-Fixes.1.cs'.
 "Fixes for removed MenuIcon class"
 FileStream fileIn: '../cs/MenuIcon-Fixes.1.cs'.
 !
+"Missing FakeClassPool taken from 1.3 13315"
+FileStream fileIn: '../cs/FakeClassPool.1.cs'.
+!
+"'Project' class removed from 1.4, now use 'UIManager default'"
+FileStream fileIn: '../cs/ProjectFixes.1.cs'.
+!
 "Select Tools"
 SystemBrowser default: (Smalltalk at: #OBSystemBrowserAdaptor).
