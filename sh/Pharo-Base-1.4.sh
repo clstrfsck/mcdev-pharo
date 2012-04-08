@@ -60,7 +60,6 @@ get_buildfile "$VMFILE" "$VMPROJ" ${VBLD} "$VM_ART"
 # Retrieve Pharo 1.4 image into local zip file from Jenkins
 # Local file includes build number and update number for tracking
 # We can use the update number here as a regular convention is used
-echo "Checking current $PHPROJ build number"
 if [ -z "$PHPEG" ]; then
     echo "Checking current $PHPROJ build number"
     PBLD=`get_buildnum "$PHPROJ"`
@@ -82,6 +81,8 @@ unzip -qjo -d build "$PHFILE"
 unzip -qjo -d build "$VMFILE"
 echo "Cog VM build $VBLD from $UPSTREAM/$VMPROJ" >> build/VERSIONS
 echo "Pharo 1.4 image build $PBLD rev $PREV from $UPSTREAM/$PHPROJ" >> build/VERSIONS
+"$SCRIPTDIR/runscripts.sh" "${PKGNAME}" "$IMGNAME" \
+    st/pharo-base.st
 zip -qrj "$OUTFILE" build/*
 echo "$OUTFILE created"
 

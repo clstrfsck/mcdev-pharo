@@ -1,0 +1,1 @@
+'From Pharo1.4a of ''16 June 2011'' [Latest update: #14423] on 8 April 2012 at 8:03:40 pm'!!ReleaseTest methodsFor: 'testing' stamp: 'mps 4/8/2012 18:45'!testUndeclared	Smalltalk cleanOutUndeclared. 	self 		assert: Undeclared isEmpty		description: 'Undeclared classes: ', Undeclared asString.! !
