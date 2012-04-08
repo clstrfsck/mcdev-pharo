@@ -1,3 +1,4 @@
+"Adopted from github.com/renggli/builder"
 "Refactoring"
 Gofer new
 	squeaksource: 'rb';
@@ -31,6 +32,9 @@ Gofer new
 	package: 'ECompletion';
 	package: 'ECompletionOmniBrowser';
 	load.
+!
+"Fixes for items removed and buggy in Pharo 1.4"
+FileStream fileIn: '../cs/OmniBrowser-Fixes.1.cs'.
 !
 "Select Tools"
 SystemBrowser default: (Smalltalk at: #OBSystemBrowserAdaptor).

@@ -27,3 +27,6 @@ Gofer new
 	renggli: 'unsorted';
 	package: 'ShoutTests';
 	load.
+!
+"Fixes for items removed and buggy in Pharo 1.4"
+FileStream fileIn: '../cs/OmniBrowser-Tests-Fixes.1.cs'.

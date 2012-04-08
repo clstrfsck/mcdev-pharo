@@ -1,0 +1,1 @@
+"-*- Smalltalk -*-"'From Pharo1.4a of ''16 June 2011'' [Latest update: #14423] on 8 April 2012 at 3:46:10 pm'!!OBSourceFilesResource methodsFor: 'initializing' stamp: 'mps 4/8/2012 01:21'!setUp	sources := ExpandedSourceFileArray new: 2.	sources at: 1 put: self sourceStream.	sources at: 2 put: self changesStream.! !
