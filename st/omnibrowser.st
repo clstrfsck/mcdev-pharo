@@ -33,8 +33,13 @@ Gofer new
 	package: 'ECompletionOmniBrowser';
 	load.
 !
+SHPreferences initialize.
+!
 "Fixes for items removed and buggy in Pharo 1.4"
 FileStream fileIn: '../cs/OmniBrowser-Fixes.1.cs'.
+!
+"Fixes for removed MenuIcon class"
+FileStream fileIn: '../cs/MenuIcon-Fixes.1.cs'.
 !
 "Select Tools"
 SystemBrowser default: (Smalltalk at: #OBSystemBrowserAdaptor).
