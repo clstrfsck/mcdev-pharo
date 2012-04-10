@@ -26,5 +26,4 @@ Symbol compactSymbolTable.
 Deprecation raiseWarning: true.
 !
 "Save and Quit"
-WorldState addDeferredUIMessage: [
-	SmalltalkImage current snapshot: true andQuit: true ].
+SmalltalkImage current snapshot: true andQuit: true.
