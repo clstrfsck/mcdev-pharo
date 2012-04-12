@@ -1,18 +1,18 @@
 "Adopted from github.com/renggli/builder"
-"Traditional"
+Transcript crShow: 'Traditional'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Seaside-Tests-Examples';
 	load.
 !
-"Development and Admin Tools"
+Transcript crShow: 'Development and Admin Tools'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Grease-Tests-Slime';
 	package: 'Seaside-Tests-Slime';
 	load.
 !
-"Other Packages"
+Transcript crShow: 'Other Packages'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Seaside-Tests-Welcome';

@@ -1,5 +1,5 @@
 "Adopted from github.com/renggli/builder"
-"Refactoring"
+Transcript crShow: 'Refactoring'.
 Gofer new
 	squeaksource: 'rb';
 	package: 'AST-Core';
@@ -12,7 +12,7 @@ Gofer new
 	package: 'Refactoring-Pharo-Platform';
 	load.
 !
-"OmniBrowser"
+Transcript crShow: 'OmniBrowser'.
 Gofer new
 	renggli: 'omnibrowser';
 	package: 'OmniBrowser';
@@ -25,7 +25,7 @@ Gofer new
 	package: 'OB-SUnitIntegration';
 	load.
 !
-"Tools"
+Transcript crShow: 'Tools'.
 Gofer new
 	renggli: 'unsorted';
 	package: 'Shout';
@@ -35,17 +35,17 @@ Gofer new
 !
 SHPreferences initialize.
 !
-"Fixes for items removed and buggy in Pharo 1.4"
+Transcript crShow: 'Fixes for items removed and buggy in Pharo 1.4'.
 FileStream fileIn: '../cs/OmniBrowser-Fixes.1.cs'.
 !
-"Fixes for removed MenuIcon class"
+Transcript crShow: 'Fixes for removed MenuIcon class'.
 FileStream fileIn: '../cs/MenuIcon-Fixes.1.cs'.
 !
-"Missing FakeClassPool taken from 1.3 13315"
+Transcript crShow: 'Missing FakeClassPool taken from 1.3 13315'.
 FileStream fileIn: '../cs/FakeClassPool.1.cs'.
 !
-"'Project' class removed from 1.4, now use 'UIManager default'"
+Transcript crShow: '''Project'' class removed from 1.4, now use ''UIManager default'''.
 FileStream fileIn: '../cs/ProjectFixes.1.cs'.
 !
-"Select Tools"
+Transcript crShow: 'Select OmniBrowser'.
 SystemBrowser default: (Smalltalk at: #OBSystemBrowserAdaptor).

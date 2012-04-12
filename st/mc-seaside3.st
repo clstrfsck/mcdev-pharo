@@ -1,4 +1,4 @@
-"Seaside 3.0"
+Transcript crShow: 'Seaside 3.0'.
 UIManager default inform: 'Loading Seaside 3.0'.
 Gofer new
         squeaksource: 'MetacelloRepository';
@@ -6,7 +6,7 @@ Gofer new
         load.
 (Smalltalk at: #ConfigurationOfSeaside30) load.
 !
-"AJP Server"
+Transcript crShow: 'AJP Server'.
 UIManager default inform: 'Loading AJP'.
 Gofer new
         squeaksource: 'ajp';
@@ -16,7 +16,7 @@ Gofer new
         package: 'AJP-Pharo-Core';
         load.
 !
-"RFB (VNC) server/client"
+Transcript crShow: 'RFB (VNC) server/client'.
 UIManager default inform: 'Loading RFB'.
 Gofer new
         squeaksource: 'MetacelloRepository';
@@ -24,5 +24,5 @@ Gofer new
         load.
 (Smalltalk at: #ConfigurationOfRFB) load.
 !
-"Fixes for abnormally terminated connections"
+Transcript crShow: 'Fixes for abnormally terminated connections'.
 FileStream fileIn: '../cs/RFBFixes.1.cs'.

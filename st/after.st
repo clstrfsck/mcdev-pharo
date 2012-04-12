@@ -1,29 +1,32 @@
 "Adopted from github.com/renggli/builder"
-"Unload Build Tools"
+Transcript crShow: 'Unload Build Tools'.
 [ Gofer new
 	package: 'HudsonBuildTools';
 	unload ]
 		on: Error
 		do: [ :err | "package not present" ].
 !
-"Clear Monticello Caches"
+Transcript crShow: 'Clear Monticello Caches'.
 MCCacheRepository instVarNamed: 'default' put: nil.
 MCFileBasedRepository flushAllCaches.
 MCMethodDefinition shutDown.
 MCDefinition clearInstances.
 !
-"Cleanup Smalltalk"
+Transcript crShow: 'Cleanup Smalltalk'.
 Smalltalk flushClassNameCache.
 Smalltalk organization removeEmptyCategories.
 Smalltalk allClassesAndTraitsDo: [ :each |
 	each organization removeEmptyCategories; sortCategories.
 	each class organization removeEmptyCategories; sortCategories ].
 !
-"Cleanup System Memory"
+Transcript crShow: 'Cleanup System Memory'.
 Author reset.
 Smalltalk garbageCollect.
 Symbol compactSymbolTable.
-Deprecation raiseWarning: true.
+Deprecation raiseWarning: false. "Deprecations off for now"
 !
-"Save and Quit"
+Transcript crShow: 'Reinstall standard transcript'.
+ThreadSafeTranscript install.
+!
+Transcript crShow: 'Save and Quit'.
 SmalltalkImage current snapshot: true andQuit: true.

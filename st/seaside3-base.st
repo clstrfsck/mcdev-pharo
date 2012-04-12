@@ -1,5 +1,5 @@
 "Adopted from github.com/renggli/builder"
-"Basic"
+Transcript crShow: 'Basic'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Grease-Core';
@@ -17,7 +17,7 @@ Gofer new
 	package: 'Seaside-Pharo-Environment';
 	load.
 !
-"Traditional"
+Transcript crShow: 'Traditional'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Seaside-Pharo-Continuation';
@@ -29,13 +29,13 @@ Gofer new
         package: 'Seaside-Pharo-Development';
 	load.
 !
-"RSS"
+Transcript crShow: 'RSS'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'RSS-Core';
 	load.
 !
-"Javascript"
+Transcript crShow: 'Javascript'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Javascript-Core';
@@ -49,7 +49,7 @@ Gofer new
 	package: 'Comet-Pharo-Core';
 	load.
 !
-"Other Packages"
+Transcript crShow: 'Other Packages'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Seaside-HTML5';
@@ -58,7 +58,7 @@ Gofer new
 	package: 'Seaside-Pharo-Email';
 	load.
 !
-"Addon Packages"
+Transcript crShow: 'Addon Packages'.
 Gofer new
 	squeaksource: 'Seaside30Addons';
 	package: 'Seaside-REST-Core';

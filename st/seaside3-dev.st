@@ -1,10 +1,10 @@
-"Traditional"
+Transcript crShow: 'Traditional'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Seaside-Examples';
 	load.
 !
-"Development and Admin Tools"
+Transcript crShow: 'Development and Admin Tools'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Grease-Slime';
@@ -13,19 +13,19 @@ Gofer new
 	package: 'Seaside-Pharo-Tools-OmniBrowser';
 	load.
 !
-"RSS"
+Transcript crShow: 'RSS'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'RSS-Examples';
 	load.
 !
-"Javascript"
+Transcript crShow: 'Javascript'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Comet-Examples';
 	load.
 !
-"Other Packages"
+Transcript crShow: 'Other Packages'.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Seaside-Welcome';

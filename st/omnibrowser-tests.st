@@ -1,5 +1,5 @@
 "Adopted from github.com/renggli/builder"
-"Refactoring Tests"
+Transcript crShow: 'Refactoring Tests'.
 Gofer new
 	squeaksource: 'rb';
 	package: 'AST-Tests-Core';
@@ -11,7 +11,7 @@ Gofer new
 	package: 'Refactoring-Tests-Spelling';
 	load.
 !
-"OmniBrowser Tests"
+Transcript crShow: 'OmniBrowser Tests'.
 Gofer new
 	renggli: 'omnibrowser';
 	package: 'BogusInfo';
@@ -22,11 +22,11 @@ Gofer new
 	package: 'OB-Tests-Refactory';
 	load.
 !
-"Tool Tests"
+Transcript crShow: 'Tool Tests'.
 Gofer new
 	renggli: 'unsorted';
 	package: 'ShoutTests';
 	load.
 !
-"Fixes for items removed and buggy in Pharo 1.4"
+Transcript crShow: 'Fixes for items removed and buggy in Pharo 1.4'.
 FileStream fileIn: '../cs/OmniBrowser-Tests-Fixes.1.cs'.
