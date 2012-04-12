@@ -63,12 +63,13 @@ get_buildfile "$VMFILE" "$VMPROJ" ${VBLD} "$VM_ART"
 if [ -z "$PHPEG" ]; then
     echo "Checking current $PHPROJ build number"
     PBLD=`get_buildnum "$PHPROJ"`
+    PURL="$UPSTREAM/$PHPROJ/$PBLD/api/xml?xpath=/*/description"
+    PREV=`curl -fsS "${PURL}" | cut -f2 -d " " | tr -dc 0123456789`
 else
     echo "Using $PHPROJ peg build $PHPEG"
     PBLD="$PHPEG"
+    PREV="`echo Pharo-1.4-376-*.zip | sed -e 's/Pharo-1.4-376-\(.\+\).zip/\1/'`"
 fi
-PURL="$UPSTREAM/$PHPROJ/$PBLD/api/xml?xpath=/*/description"
-PREV=`curl -fsS "${PURL}" | cut -f2 -d " " | tr -dc 0123456789`
 echo "Build number $PBLD revision $PREV"
 PHFILE="Pharo-1.4-${PBLD}-${PREV}.zip"
 get_buildfile "$PHFILE" "$PHPROJ" ${PBLD} "$PH_ART"
