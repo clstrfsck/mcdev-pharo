@@ -1,5 +1,5 @@
 "Adopted from github.com/renggli/builder"
-Transcript crShow: 'Zinc Server'.
+Transcript show: 'Zinc Server'; cr.
 Gofer new
 	squeaksource: 'ZincHTTPComponents';
 	package: 'Zinc-HTTP';

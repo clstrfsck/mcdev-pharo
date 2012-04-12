@@ -1,5 +1,5 @@
 "Adopted from github.com/renggli/builder"
-Transcript crShow: 'Run the Refactoring and OmniBrowser Tests'.
+Transcript show: 'Run the Refactoring and OmniBrowser Tests'; cr.
 HDTestReport runPackages: #(
 	'AST-Tests-Core'
 	'AST-Tests-Semantic'

@@ -1,5 +1,5 @@
 "Adopted from github.com/renggli/builder"
-Transcript crShow: 'AJP Server'.
+Transcript show: 'AJP Server'; cr.
 Gofer new
 	squeaksource: 'ajp';
 	package: 'YBuffer-Core';

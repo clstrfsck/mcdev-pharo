@@ -1,9 +1,8 @@
-Transcript crShow: 'RFB (VNC) server/client'.
+Transcript show: 'RFB (VNC) server/client'; cr.
 Gofer new
-        squeaksource: 'MetacelloRepository';
-        package: 'ConfigurationOfRFB';
+        renggli: 'unsorted';
+        package: 'RFB';
         load.
-(Smalltalk at: #ConfigurationOfRFB) load.
 !
-Transcript crShow: 'Fixes for abnormally terminated connections'.
+Transcript show: 'Fixes for abnormally terminated connections'; cr.
 FileStream fileIn: '../cs/RFBFixes.1.cs'.

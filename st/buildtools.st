@@ -1,5 +1,5 @@
 "Adopted from github.com/renggli/builder"
-Transcript crShow: 'Load Build Tools'.
+Transcript show: 'Load Build Tools'; cr.
 Gofer new
 	renggli: 'hudson';
 	package: 'HudsonBuildTools';

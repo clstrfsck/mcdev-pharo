@@ -1,5 +1,5 @@
 "Adopted from github.com/renggli/builder"
-Transcript crShow: 'Refactoring'.
+Transcript show: 'Refactoring'; cr.
 Gofer new
 	squeaksource: 'rb';
 	package: 'AST-Core';
@@ -12,7 +12,7 @@ Gofer new
 	package: 'Refactoring-Pharo-Platform';
 	load.
 !
-Transcript crShow: 'OmniBrowser'.
+Transcript show: 'OmniBrowser'; cr.
 Gofer new
 	renggli: 'omnibrowser';
 	package: 'OmniBrowser';
@@ -25,7 +25,7 @@ Gofer new
 	package: 'OB-SUnitIntegration';
 	load.
 !
-Transcript crShow: 'Tools'.
+Transcript show: 'Tools'; cr.
 Gofer new
 	renggli: 'unsorted';
 	package: 'Shout';
@@ -35,17 +35,17 @@ Gofer new
 !
 SHPreferences initialize.
 !
-Transcript crShow: 'Fixes for items removed and buggy in Pharo 1.4'.
+Transcript show: 'Fixes for items removed and buggy in Pharo 1.4'; cr.
 FileStream fileIn: '../cs/OmniBrowser-Fixes.1.cs'.
 !
-Transcript crShow: 'Fixes for removed MenuIcon class'.
+Transcript show: 'Fixes for removed MenuIcon class'; cr.
 FileStream fileIn: '../cs/MenuIcon-Fixes.1.cs'.
 !
-Transcript crShow: 'Missing FakeClassPool taken from 1.3 13315'.
+Transcript show: 'Missing FakeClassPool taken from 1.3 13315'; cr.
 FileStream fileIn: '../cs/FakeClassPool.1.cs'.
 !
-Transcript crShow: '''Project'' class removed from 1.4, now use ''UIManager default'''.
+Transcript show: '''Project'' class removed from 1.4, now use ''UIManager default'''; cr.
 FileStream fileIn: '../cs/ProjectFixes.1.cs'.
 !
-Transcript crShow: 'Select OmniBrowser'.
+Transcript show: 'Select OmniBrowser'; cr.
 SystemBrowser default: (Smalltalk at: #OBSystemBrowserAdaptor).
