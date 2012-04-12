@@ -5,11 +5,12 @@ set -e
 # Some useful vars for later
 SCRIPTDIR="`dirname $0`"
 PKGNAME="`basename $0 .sh`"
+TSTNAME="${PKGNAME}-Tests"
 IMGNAME=Pharo-1.4.image
 
 # Output and test results we will generate
 OUTFILE="${PKGNAME}.zip"
-TSTFILE="${PKGNAME}-Tests.zip"
+TSTFILE="${TSTNAME}.zip"
 
 # Upstream Jenkins
 UPSTREAM=https://ci.lille.inria.fr/pharo/job
@@ -88,7 +89,7 @@ zip -qrj "$OUTFILE" build/*
 echo "$OUTFILE created"
 
 # Run the tests and zip these up into an artifact as well.
-"$SCRIPTDIR/runscripts.sh" "${PKGNAME}-Tests" "$IMGNAME" \
+"$SCRIPTDIR/runscripts.sh" "${TSTNAME}" "$IMGNAME" \
     st/buildtools.st \
     st/pharo-runtests.st
 zip -qrj "$TSTFILE" build/*

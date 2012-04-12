@@ -19,7 +19,11 @@ unzip -qjo -d build "${PKGPARENT}.zip"
 echo "${PKGNAME} as loaded by ${PKGNAME}.st" >> build/VERSIONS
 
 # Build the base image
-"$SCRIPTDIR/runscripts.sh" "${PKGNAME}" "$IMGNAME" st/seaside3-base.st st/seaside3-ajp.st st/seaside3-zinc.st st/rfb.st
+"$SCRIPTDIR/runscripts.sh" "${PKGNAME}" "$IMGNAME" \
+    st/seaside3-base.st \
+    st/seaside3-ajp.st \
+    st/seaside3-zinc.st \
+    st/rfb.st
 zip -qrj "$OUTFILE" build/*
 echo "$OUTFILE created"
 

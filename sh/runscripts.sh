@@ -25,7 +25,12 @@ for f in st/before.st $SCRIPTS st/after.st; do
 done
 
 echo "Building package $PKGNAME"
-(cd build; ln -s ../package-cache; ./CogVM -nodisplay -nosound "${IMGNAME}" "${PKGNAME}.st"; rm -f package-cache)
+(
+    cd build
+    ln -s ../package-cache
+    ./CogVM -nodisplay -nosound "${IMGNAME}" "${PKGNAME}.st" | tee "${PKGNAME}.log"
+    rm -f package-cache
+)
 
 if [ -f build/crash.dmp ]; then
     echo "Build failed: VM crashed"
