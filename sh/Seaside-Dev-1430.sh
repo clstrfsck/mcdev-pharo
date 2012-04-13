@@ -20,7 +20,10 @@ rm -f build/*-Test.xml
 echo "${PKGNAME} as loaded by ${PKGNAME}.st" >> build/VERSIONS
 
 # Build the base image
-"$SCRIPTDIR/runscripts.sh" "${PKGNAME}" "$IMGNAME" st/omnibrowser.st st/seaside3-dev.st
+"$SCRIPTDIR/runscripts.sh" "${PKGNAME}" "$IMGNAME" \
+    st/omnibrowser.st \
+    st/seaside3-dev.st \
+    st/seaside3-extra-dev.st
 zip -qrj "$OUTFILE" build/*
 echo "$OUTFILE created"
 

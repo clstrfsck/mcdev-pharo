@@ -21,6 +21,7 @@ echo "${PKGNAME} as loaded by ${PKGNAME}.st" >> build/VERSIONS
 # Build the base image
 "$SCRIPTDIR/runscripts.sh" "${PKGNAME}" "$IMGNAME" \
     st/seaside3-base.st \
+    st/seaside3-extra.st \
     st/seaside3-ajp.st \
     st/seaside3-zinc.st \
     st/rfb.st
@@ -32,6 +33,7 @@ echo "${TSTNAME} as loaded by ${TSTNAME}.st" >> build/VERSIONS
 "$SCRIPTDIR/runscripts.sh" "${TSTNAME}" "$IMGNAME" \
     st/buildtools.st \
     st/seaside3-base-tests.st \
+    st/seaside3-extra-tests.st \
     st/pharo-runtests.st \
     st/seaside3-runtests.st
 zip -qrj "$TSTFILE" build/*
