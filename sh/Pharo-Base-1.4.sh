@@ -69,7 +69,7 @@ if [ -z "$PHPEG" ]; then
 else
     echo "Using $PHPROJ peg build $PHPEG"
     PBLD="$PHPEG"
-    PREV="`echo Pharo-1.4-376-*.zip | sed -e 's/Pharo-1.4-376-\(.\+\).zip/\1/'`"
+    PREV="`echo Pharo-1.4-${PBLD}-*.zip | sed -e 's/Pharo-1.4-\([0-9]\+\)-\([0-9]\+\).zip/\2/'`"
 fi
 echo "Build number $PBLD revision $PREV"
 PHFILE="Pharo-1.4-${PBLD}-${PREV}.zip"
