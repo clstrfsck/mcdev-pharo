@@ -1,6 +1,6 @@
 "Adopted from github.com/renggli/builder"
 Transcript show: 'Run the Refactoring and OmniBrowser Tests'; cr.
-HDTestReport runPackages: #(
+HDTestReportWithLog runPackages: #(
 	'AST-Tests-Core'
 	'AST-Tests-Semantic'
 	'Refactoring-Tests-Core'
