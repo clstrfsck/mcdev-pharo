@@ -28,7 +28,6 @@ Gofer new
 Transcript show: 'Tools'; cr.
 Gofer new
 	renggli: 'unsorted';
-	package: 'Shout';
 	package: 'ECompletion';
 	package: 'ECompletionOmniBrowser';
 	load.

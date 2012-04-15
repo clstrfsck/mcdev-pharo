@@ -22,11 +22,5 @@ Gofer new
 	package: 'OB-Tests-Refactory';
 	load.
 !
-Transcript show: 'Tool Tests'; cr.
-Gofer new
-	renggli: 'unsorted';
-	package: 'ShoutTests';
-	load.
-!
-Transcript show: 'Fixes for items removed and buggy in Pharo 1.4'; cr.
+Transcript show: 'Fixes for SourceFileArray -> ExpandedSourceFileArray in Pharo 1.4'; cr.
 FileStream fileIn: '../cs/OmniBrowser-Tests-Fixes.1.cs'.
