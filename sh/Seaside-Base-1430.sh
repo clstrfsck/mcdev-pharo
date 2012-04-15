@@ -14,8 +14,7 @@ OUTFILE="${PKGNAME}.zip"
 TSTFILE="${TSTNAME}.zip"
 
 # Using a new build directory, unpack the upstream bits.
-rm -rf build && mkdir build
-unzip -qjo -d build "${PKGPARENT}.zip"
+rm -rf build && mkdir build && unzip -qjo -d build "${PKGPARENT}.zip"
 echo "${PKGNAME} as loaded by ${PKGNAME}.st" >> build/VERSIONS
 
 # Build the base image
@@ -25,7 +24,7 @@ echo "${PKGNAME} as loaded by ${PKGNAME}.st" >> build/VERSIONS
     st/seaside3-ajp.st \
     st/seaside3-zinc.st \
     st/rfb.st
-zip -qrj "$OUTFILE" build/*
+rm -f "$OUTFILE" && zip -qj "$OUTFILE" build/*
 echo "$OUTFILE created"
 
 # Build the test image
@@ -36,5 +35,5 @@ echo "${TSTNAME} as loaded by ${TSTNAME}.st" >> build/VERSIONS
     st/seaside3-extra-tests.st \
     st/pharo-runtests.st \
     st/seaside3-runtests.st
-zip -qrj "$TSTFILE" build/*
+rm -f "$TSTFILE" && zip -qj "$TSTFILE" build/*
 echo "$TSTFILE created"

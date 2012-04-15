@@ -78,21 +78,19 @@ get_buildfile "$PHFILE" "$PHPROJ" ${PBLD} "$PH_ART"
 # Using a new build directory, unpack the upstream bits.
 # We then annotate the output with the versions of the VM
 # and image that are included.
-rm -rf build && mkdir build
-unzip -qjo -d build "$PHFILE"
-unzip -qjo -d build "$VMFILE"
+rm -rf build && mkdir build && unzip -qjo -d build "$PHFILE" && unzip -qjo -d build "$VMFILE"
 echo "Cog VM build $VBLD from $UPSTREAM/$VMPROJ" >> build/VERSIONS
 echo "Pharo 1.4 image build $PBLD rev $PREV from $UPSTREAM/$PHPROJ" >> build/VERSIONS
 "$SCRIPTDIR/runscripts.sh" "${PKGNAME}" "$IMGNAME" \
     st/pharo-base.st
-zip -qrj "$OUTFILE" build/*
+rm -f "$OUTFILE" && zip -qj "$OUTFILE" build/*
 echo "$OUTFILE created"
 
 # Run the tests and zip these up into an artifact as well.
 "$SCRIPTDIR/runscripts.sh" "${TSTNAME}" "$IMGNAME" \
     st/buildtools.st \
     st/pharo-runtests.st
-zip -qrj "$TSTFILE" build/*
+rm -f "$TSTFILE" && zip -qj "$TSTFILE" build/*
 echo "$TSTFILE created"
 
 ## END ##
