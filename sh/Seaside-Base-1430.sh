@@ -33,7 +33,6 @@ echo "${TSTNAME} as loaded by ${TSTNAME}.st" >> build/VERSIONS
     st/buildtools.st \
     st/seaside3-base-tests.st \
     st/seaside3-extra-tests.st \
-    st/pharo-runtests.st \
-    st/seaside3-runtests.st
+    st/pharo-runtests.st
 rm -f "$TSTFILE" && zip -qj "$TSTFILE" build/*
 echo "$TSTFILE created"
