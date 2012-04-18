@@ -25,13 +25,13 @@ Gofer new
 	package: 'OB-SUnitIntegration';
 	load.
 !
-Transcript show: 'Tools'; cr.
-Gofer new
-	renggli: 'unsorted';
-"	package: 'ECompletion'; "
-	package: 'ECompletionOmniBrowser';
-	load.
-!
+" Transcript show: 'Tools'; cr. "
+" Gofer new "
+" 	renggli: 'unsorted'; "
+" 	package: 'ECompletion'; "
+" 	package: 'ECompletionOmniBrowser'; "
+" 	load. "
+
 SHPreferences initialize.
 !
 Transcript show: 'Fixes for items removed and buggy in Pharo 1.4'; cr.
