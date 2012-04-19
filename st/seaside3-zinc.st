@@ -2,6 +2,7 @@
 Transcript show: 'Zinc Server'; cr.
 Gofer new
 	squeaksource: 'ZincHTTPComponents';
-	"package: 'Zinc-HTTP';" "Already included in Pharo 1.4"
+	package: 'Zinc-HTTP';
+	package: 'Zinc-Tests';
 	package: 'Zinc-Seaside';
 	load.
