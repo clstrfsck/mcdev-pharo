@@ -20,6 +20,7 @@ fi
 shift 2
 SCRIPTS="$*"
 
+rm -f "build/${PKGNAME}.st"
 for f in st/before.st $SCRIPTS st/after.st; do
     cat "$f" >>"build/${PKGNAME}.st"
     echo "!" >>"build/${PKGNAME}.st"
@@ -41,3 +42,5 @@ if [ -f build/PharoDebug.log ] && grep -q THERE_BE_DRAGONS_HERE build/PharoDebug
     echo "Build failed: Execution failed; check build/PharoDebug.log"
     exit 1
 fi
+
+## END ##

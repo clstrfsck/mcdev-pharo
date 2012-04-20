@@ -1,5 +1,5 @@
 "Adopted from github.com/renggli/builder"
-Transcript show: 'Traditional'; cr.
+Transcript show: 'Traditional Examples'; cr.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Seaside-Tests-Examples';

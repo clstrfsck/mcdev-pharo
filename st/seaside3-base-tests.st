@@ -1,5 +1,5 @@
 "Adopted from github.com/renggli/builder"
-Transcript show: 'Basic'; cr.
+Transcript show: 'Basic Tests'; cr.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Grease-Tests-Core';
@@ -14,7 +14,7 @@ Gofer new
 	package: 'Seaside-Tests-Environment';
 	load.
 !
-Transcript show: 'Traditional'; cr.
+Transcript show: 'Traditional Tests'; cr.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Seaside-Tests-Functional';
@@ -26,13 +26,13 @@ Gofer new
         package: 'Seaside-Tests-Pharo-Development';
 	load.
 !
-Transcript show: 'RSS'; cr.
+Transcript show: 'RSS Tests'; cr.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'RSS-Tests-Core';
 	load.
 !
-Transcript show: 'Javascript'; cr.
+Transcript show: 'Javascript Tests'; cr.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Javascript-Tests-Core';
@@ -45,7 +45,7 @@ Gofer new
 	package: 'Comet-Tests-Core';
 	load.
 !
-Transcript show: 'Other Packages'; cr.
+Transcript show: 'Other Packages Tests'; cr.
 Gofer new
 	squeaksource: 'Seaside30';
 	package: 'Seaside-Tests-HTML5';
@@ -54,7 +54,7 @@ Gofer new
 	package: 'Seaside-Tests-Pharo-Email';
 	load.
 !
-Transcript show: 'Addon Packages'; cr.
+Transcript show: 'Addon Packages Tests'; cr.
 Gofer new
 	squeaksource: 'Seaside30Addons';
 	package: 'Seaside-Tests-REST-Core';

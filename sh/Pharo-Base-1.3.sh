@@ -68,14 +68,13 @@ unzip -qjo -d build "$PHFILE"
 unzip -qjo -d build "$VMFILE"
 echo "Cog VM build $VBLD from $UPSTREAM/$VMPROJ" >> build/VERSIONS
 echo "Pharo 1.3 image build $PBLD rev $PREV from $UPSTREAM/$PHPROJ" >> build/VERSIONS
-zip -qrj "$OUTFILE" build/*
+rm -f "$OUTFILE" && zip -qrj "$OUTFILE" build/*
 echo "$OUTFILE created"
 
 # Run the tests and zip these up into an artifact as well.
 "$SCRIPTDIR/runscripts.sh" "${PKGNAME}-Tests" "$IMGNAME" \
     st/buildtools.st \
     st/pharo-runtests.st
-zip -qrj "$TSTFILE" build/*
-echo "$TSTFILE created"
+rm -f "${PKGNAME}-Tests.zip" && zip -qrj "${PKGNAME}-Tests.zip" build/*
 
 ## END ##

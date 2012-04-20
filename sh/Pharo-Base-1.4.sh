@@ -9,7 +9,7 @@ TSTNAME="${PKGNAME}-Tests"
 IMGNAME=Pharo-1.4.image
 
 # Output and test results we will generate
-OUTFILE="${PKGNAME}.zip"
+PKGFILE="${PKGNAME}.zip"
 TSTFILE="${TSTNAME}.zip"
 
 # Upstream Jenkins
@@ -81,16 +81,16 @@ get_buildfile "$PHFILE" "$PHPROJ" ${PBLD} "$PH_ART"
 rm -rf build && mkdir build && unzip -qjo -d build "$PHFILE" && unzip -qjo -d build "$VMFILE"
 echo "Cog VM build $VBLD from $UPSTREAM/$VMPROJ" >> build/VERSIONS
 echo "Pharo 1.4 image build $PBLD rev $PREV from $UPSTREAM/$PHPROJ" >> build/VERSIONS
-"$SCRIPTDIR/runscripts.sh" "${PKGNAME}" "$IMGNAME" \
+"$SCRIPTDIR/runscripts.sh" "$PKGNAME" "$IMGNAME" \
     st/pharo-base.st
-rm -f "$OUTFILE" && zip -qj "$OUTFILE" build/*
-echo "$OUTFILE created"
+rm -f "$PKGFILE" && zip -qj "$PKGFILE" build/*
+echo "$PKGFILE created"
 
 # Run the tests and zip these up into an artifact as well.
-"$SCRIPTDIR/runscripts.sh" "${TSTNAME}" "$IMGNAME" \
-    st/buildtools.st \
-    st/pharo-runtests.st
 rm -f "$TSTFILE" && zip -qj "$TSTFILE" build/*
+"$SCRIPTDIR/runscripts.sh" "$TSTNAME" "$IMGNAME" \
+    st/pharo-runtests.st
+zip -qj "$TSTFILE" build/*.log build/*.xml
 echo "$TSTFILE created"
 
 ## END ##
