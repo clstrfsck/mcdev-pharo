@@ -14,6 +14,8 @@ MCDefinition clearInstances.
 !
 Transcript show: 'Cleanup Smalltalk'; cr.
 Smalltalk flushClassNameCache.
+Smalltalk fixObsoleteReferences.
+Smalltalk cleanOutUndeclared.
 Smalltalk organization removeEmptyCategories.
 Smalltalk allClassesAndTraitsDo: [ :each |
 	each organization removeEmptyCategories; sortCategories.
