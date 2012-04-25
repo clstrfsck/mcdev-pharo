@@ -11,5 +11,6 @@ Gofer new
 	package: 'MonticelloFileTree-Core';
 	load.
 !
-Transcript show: 'Remove selector for undeclared class'; cr.
+Transcript show: 'Remove selector for undeclared/unwanted elements'; cr.
 MCFileTreeRepository removeSelector: #metacelloProjectClass.
+Object removeSelector: #writeCypressJsonOn:forHtml:indent:.
