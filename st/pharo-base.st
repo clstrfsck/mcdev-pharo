@@ -6,3 +6,6 @@ FileStream fileIn: '../cs/Deprecation-Fixes.1.cs'.
 !
 Transcript show: 'Fixes for Shout parser'; cr.
 FileStream fileIn: '../cs/SHParserST80Test-Fixes.1.cs'.
+!
+Transcript show: 'Fixes for Zinc cookie tests'; cr.
+FileStream fileIn: '../cs/ZnCookieFixes.1.cs'.
